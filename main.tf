@@ -1,16 +1,17 @@
 module "primary_app" {
   source          = "./modules/web_app"
-  app_name        = "webapp-alpha"
-  replica_count   = 3 # This is your "N" value
-  node_port       = 30001
-  display_message = "Welcome to Alpha Stack!"
+  app_name        = var.primary_app_name
+  replica_count   = var.primary_replica_count
+  node_port       = var.primary_node_port
+  display_message = var.primary_display_message
 }
+
 
 # BONUS: Implementing an additional stack with minimal code
 module "bonus_app" {
   source          = "./modules/web_app"
-  app_name        = "webapp-bonus"
-  replica_count   = 2
-  node_port       = 30002
-  display_message = "This is the Bonus Server speaking:"
+  app_name        = var.bonus_app_name
+  replica_count   = var.bonus_replica_count
+  node_port       = var.bonus_node_port
+  display_message = var.bonus_display_message
 }

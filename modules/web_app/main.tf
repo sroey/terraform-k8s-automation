@@ -1,12 +1,3 @@
-variable "app_name" { type = string }
-variable "replica_count" { type = number }
-
-variable "display_message" {
-  type    = string
-  default = "Updated. Hello! You are being served by"
-}
-
-variable "node_port" { type = number }
 
 resource "kubernetes_deployment" "web_app" {
   metadata {
