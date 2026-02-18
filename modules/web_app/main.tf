@@ -41,13 +41,13 @@ resource "kubernetes_deployment" "web_app" {
           }
 
           port {
-            container_port = 5678
+            container_port = var.container_port
           }
 
           readiness_probe {
             http_get {
               path = "/"
-              port = 5678
+              port = var.container_port
             }
             initial_delay_seconds = 3
             period_seconds        = 5
@@ -64,8 +64,8 @@ resource "kubernetes_service" "web_service" {
   spec {
     selector = { app = var.app_name }
     port {
-      port        = 80
-      target_port = 5678
+      port        = var.service_port
+      target_port = var.container_port
     }
     type = "NodePort"
   }

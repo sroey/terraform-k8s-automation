@@ -20,3 +20,15 @@ variable "node_port" {
   description = "NodePort value for the service."
   type        = number
 }
+
+variable "service_port" {
+  description = "Port exposed by the Kubernetes service."
+  type        = number
+  default     = 80
+}
+
+variable "container_port" {
+  description = "Port the container listens on."
+  type        = number
+  default     = 5678
+}
