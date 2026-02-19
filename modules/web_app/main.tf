@@ -67,6 +67,32 @@ resource "kubernetes_service" "web_service" {
       port        = var.service_port
       target_port = var.container_port
     }
-    type = "NodePort"
+    type = "ClusterIP"
+      }
+}
+
+resource "kubernetes_ingress_v1" "web_ingress" {
+  metadata {
+    name = "${var.app_name}-ingress"
+  }
+
+  spec {
+    rule {
+      host = var.ingress_host
+      http {
+        path {
+          path = "/"
+          path_type = "Prefix"
+          backend {
+            service {
+              name = kubernetes_service.web_service.metadata[0].name
+              port {
+                number = var.service_port
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

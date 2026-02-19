@@ -16,11 +16,6 @@ variable "display_message" {
   default     = "Updated. Hello! You are being served by"
 }
 
-variable "node_port" {
-  description = "NodePort value for the service."
-  type        = number
-}
-
 variable "service_port" {
   description = "Port exposed by the Kubernetes service."
   type        = number
@@ -31,4 +26,10 @@ variable "container_port" {
   description = "Port the container listens on."
   type        = number
   default     = 5678
+}
+
+variable "ingress_host" {
+  description = "Host for the Ingress resource."
+  type        = string
+  default     = "web-app.local"
 }
