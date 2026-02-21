@@ -78,10 +78,9 @@ resource "kubernetes_ingress_v1" "web_ingress" {
 
   spec {
     rule {
-      host = var.ingress_host
       http {
         path {
-          path = "/"
+          path = "/${var.app_name}"
           path_type = "Prefix"
           backend {
             service {
