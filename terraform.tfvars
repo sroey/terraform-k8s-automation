@@ -1,0 +1,14 @@
+kubeconfig_path = "~/.kube/config"
+
+app_configs = {
+  primary = {
+    name            = "webapp-primary"
+    replica_count   = 10
+    display_message = "Welcome to Primary Stack!"
+  }
+  bonus = {
+    name            = "webapp-beta"
+    replica_count   = 2
+    display_message = "Welcome to Beta Stack!"
+  }
+}
