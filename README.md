@@ -31,8 +31,8 @@ k3d version
 ### Terraform
 
 ```bash
-wget https://releases.hashicorp.com/terraform/1.8.0/terraform_1.8.0_linux_amd64.zip
-unzip terraform_1.8.0_linux_amd64.zip && sudo mv terraform /usr/local/bin/
+wget https://releases.hashicorp.com/terraform/1.14.5/terraform_1.14.5_linux_amd64.zip
+unzip terraform_1.14.5_linux_amd64.zip && sudo mv terraform /usr/local/bin/
 terraform version
 ```
 
@@ -74,7 +74,7 @@ Access the applications via the ingress paths:
 
 ```bash
 curl http://localhost:8080/webapp-primary
-curl http://localhost:8080/webapp-beta
+curl http://localhost:8080/webapp-bonus
 ```
 
 ## Destroy

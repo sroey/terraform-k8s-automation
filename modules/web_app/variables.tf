@@ -27,9 +27,3 @@ variable "container_port" {
   type        = number
   default     = 5678
 }
-
-variable "ingress_host" {
-  description = "Host for the Ingress resource."
-  type        = string
-  default     = "web-app.local"
-}
