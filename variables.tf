@@ -1,3 +1,8 @@
+variable "kubeconfig_path" {
+  description = "Path to the kubeconfig file."
+  type        = string
+  default     = "~/.kube/config"
+}
 # Root variables.tf
 
 variable "app_configs" {
