@@ -47,7 +47,7 @@ terraform version
 ## Create the Cluster
 
 ```bash
-k3d cluster create my-cluster -p "8080:80@loadbalancer"
+sudo k3d cluster create my-cluster -p "8080:80@loadbalancer"
 ```
 
 This creates a local k3d cluster with port `8080` mapped to the ingress controller.
@@ -55,7 +55,7 @@ This creates a local k3d cluster with port `8080` mapped to the ingress controll
 Verify the cluster is running:
 
 ```bash
-kubectl get nodes
+sudo kubectl get nodes
 ```
 
 ## Deploy
