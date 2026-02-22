@@ -3,6 +3,11 @@ set -e
 
 echo "=== Installing Prerequisites ==="
 
+# Install base dependencies
+echo "Installing base dependencies (curl, wget, unzip)..."
+sudo apt-get update -qq
+sudo apt-get install -y -qq curl wget unzip ca-certificates
+
 # Docker
 echo "Installing Docker..."
 curl -fsSL https://get.docker.com | sh
