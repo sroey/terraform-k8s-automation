@@ -10,5 +10,5 @@ app_configs = {
     name            = "webapp-bonus"
     replica_count   = 2
     display_message = "Welcome to Bonus Stack!"
-    }
+  }
 }

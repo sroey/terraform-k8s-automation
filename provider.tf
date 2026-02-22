@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-# This uses your local Kubeconfig file that k3d created automatically
+# This uses the local Kubeconfig file that k3d created automatically
 provider "kubernetes" {
   config_path = pathexpand(var.kubeconfig_path)
 }

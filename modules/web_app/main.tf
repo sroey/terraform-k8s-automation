@@ -19,8 +19,7 @@ resource "kubernetes_deployment" "web_app" {
           image = "hashicorp/http-echo:latest"
           name  = "web-server"
 
-          # We pass the env variables into the text argument
-          # Note: http-echo will render $(VAR) if passed this way
+          # The -text argument is used to specify the message that the http-echo server will return when it receives a request.
           args = ["-text=${var.display_message} Pod: $(MY_POD_NAME) | IP: $(MY_POD_IP)"]
 
           env {
@@ -58,6 +57,7 @@ resource "kubernetes_deployment" "web_app" {
   }
 }
 
+
 # The "Endpoint" accessible locally
 resource "kubernetes_service" "web_service" {
   metadata { name = "${var.app_name}-service" }
@@ -71,6 +71,7 @@ resource "kubernetes_service" "web_service" {
       }
 }
 
+#ingress to expose the service outside the cluster
 resource "kubernetes_ingress_v1" "web_ingress" {
   metadata {
     name = "${var.app_name}-ingress"

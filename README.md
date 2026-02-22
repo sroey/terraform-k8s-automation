@@ -4,6 +4,14 @@ Deploy multiple web applications to a local Kubernetes cluster using Terraform a
 
 ## Prerequisites
 
+You can run the install script to install all prerequisites at once:
+
+```bash
+./install.sh
+```
+
+Or install manually:
+
 ### Docker
 
 ```bash

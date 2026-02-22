@@ -13,7 +13,7 @@ variable "replica_count" {
 variable "display_message" {
   description = "Message to display from the web app."
   type        = string
-  default     = "Updated. Hello! You are being served by"
+  default     = "Hello! You are being served by"
 }
 
 variable "service_port" {
