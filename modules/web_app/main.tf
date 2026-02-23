@@ -82,7 +82,7 @@ resource "kubernetes_ingress_v1" "web_ingress" {
       http {
         path {
           path = "/${var.app_name}"
-          path_type = "Prefix"
+          path_type = "Exact"
           backend {
             service {
               name = kubernetes_service.web_service.metadata[0].name
