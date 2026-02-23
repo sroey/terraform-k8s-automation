@@ -78,7 +78,7 @@ kubectl get services
 kubectl get ingress
 ```
 
-Access the applications via the ingress paths:
+Access the applications via the ingress paths, as shown in the output:
 
 ```bash
 curl http://localhost:8080/webapp-primary
@@ -102,6 +102,8 @@ k3d cluster delete my-cluster
 ## Project Structure
 
 ```
+├── .devcontainer/      # Dev container config for GitHub Codespaces (can be ignored)
+├── README.md           # Project documentation
 ├── main.tf             # Root module — instantiates web_app for each app config
 ├── variables.tf        # Input variables (kubeconfig path, app configs)
 ├── terraform.tfvars    # Default variable values
@@ -113,3 +115,5 @@ k3d cluster delete my-cluster
         ├── variables.tf
         └── outputs.tf
 ```
+
+> **Note:** The `.devcontainer/` folder is only used for the GitHub Codespaces environment and can be safely ignored.
