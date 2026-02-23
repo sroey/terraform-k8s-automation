@@ -3,7 +3,7 @@ kubeconfig_path = "~/.kube/config"
 app_configs = {
   primary = {
     name            = "webapp-primary"
-    replica_count   = 10
+    replica_count   = 6
     display_message = "Welcome to Primary Stack!"
   }
   bonus = {

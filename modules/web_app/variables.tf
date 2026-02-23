@@ -8,6 +8,11 @@ variable "app_name" {
 variable "replica_count" {
   description = "Number of replicas for the deployment."
   type        = number
+
+  validation {
+    condition     = var.replica_count > 0
+    error_message = "replica_count must be greater than 0."
+  }
 }
 
 variable "display_message" {
